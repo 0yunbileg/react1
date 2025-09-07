@@ -32,7 +32,7 @@ const Login = () => {
                     {firstname} {lastname} is logged in.
                 </div>
             ) : (
-                <div className="w-[50%]">
+                <div className="w-[50%] max-w-[520px]">
                     <div className="flex items-center justify-between">
                         <h2>Login</h2>
                         <Button onClick={() => setIsDark(prevState => !prevState)} variant={isDark ? "light" : "dark"} type="submit" className="mt-4 w-[60px] h-[60px]">

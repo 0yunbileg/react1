@@ -1,10 +1,12 @@
 import Image from "next/image";
-import Login from "@/components/login/login";
+import Slider from "@/components/slider/slider";
+import Cards from "@/components/cards/cards";
 
 export default function Home() {
   return (
-    <div>
-      <Login />
+    <div className="flex flex-col justify-center items-center">
+      <Slider />
+      <Cards />
     </div>
   );
 }
