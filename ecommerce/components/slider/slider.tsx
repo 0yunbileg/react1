@@ -10,7 +10,7 @@ const Slider = () => {
   return (
     <div
       id='carouselExampleIndicators'
-      className='carousel slide data-bs-ride="carousel" max-w-[1400px]'
+      className='carousel slide data-bs-ride="carousel" max-w-[1400px] lg:max-w-[1000px] md:max-w-[800px] overflow-hidden'
     >
       <div className='carousel-indicators'>
         <button
