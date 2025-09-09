@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Slider from "@/components/slider/slider"
-import CardsSection from "@/components/cards/cards"
+import CardsSection from "@/components/cards/cardsSection"
 
 export default function Home() {
   return (
