@@ -141,6 +141,7 @@ export async function GET() {
     id: p.id,
     title: p.title,
     shortDescription: p.shortDescription,
+    fullDescription: p.fullDescription,
     price: p.price,
     image: p.image,
   }))

@@ -14,17 +14,17 @@ async function getProducts() {
 
 export default async function Home({ params }: ProductProps) {
   const products = await getProducts()
-  console.log(products)
-  //   const product = products.find(({ item }: any) => item.id == params.id)
+  const product = products.find((p: { id: number }) => p.id == params.id)
+  console.log("desc", product.fullDescription)
   return (
     <div>
-      detail
-      {/* <Detail 
-                image={product.image}
-                title={product.title}
-                fullDesc={product.fullDescription}
-                id={product.id}
-                price={product.price} /> */}
+      <Detail
+        image={product.image}
+        title={product.title}
+        fullDescription={product.fullDescription}
+        id={product.id}
+        price={product.price}
+      />
     </div>
   )
 }

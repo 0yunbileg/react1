@@ -13,7 +13,7 @@ import { GiMountains } from "react-icons/gi"
 
 const Header = () => {
   return (
-    <header className='p-3'>
+    <header className='p-3 sticky top-0 z-4 bg-white'>
       <div className='container'>
         <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
           <a
@@ -25,7 +25,7 @@ const Header = () => {
           </a>
           <ul className='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
             <li>
-              <a href='#' className='nav-link px-2 text-black'>
+              <a href='/' className='nav-link px-2 text-black'>
                 Home
               </a>
             </li>
@@ -63,10 +63,14 @@ const Header = () => {
           </form>
           <div className='text-end'>
             <button type='button' className='btn btn-outline-dark me-2'>
-              Login
+              <Link className='btn' href={"/login"}>
+                Login
+              </Link>
             </button>
             <button type='button' className='btn btn-warning'>
-              Sign-up
+              <Link className='btn' href={"/signup"}>
+                Sign-up
+              </Link>
             </button>
           </div>
         </div>

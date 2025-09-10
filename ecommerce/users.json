@@ -1,0 +1,28 @@
+[
+  {
+    "name": "name",
+    "email": "oyunbileg@gmail.com",
+    "password": "1234"
+  },
+  {
+    "name": "user2",
+    "email": "oyunbileg2@gmail.com",
+    "password": "123"
+  },
+  {
+    "firstName": "Oyunbileg",
+    "lastName": "Battulga",
+    "email": "oyunbileoyunbileg20@gmail.com",
+    "phone": "94705895",
+    "dateOfBirth": "2008-06-09",
+    "password": "1234"
+  },
+  {
+    "firstName": "Sergelenbaatar",
+    "lastName": "a",
+    "email": "unclegooner@gmail.com",
+    "phone": "11111111",
+    "dateOfBirth": "1993-01-01",
+    "password": "0011"
+  }
+]

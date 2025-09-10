@@ -5,12 +5,18 @@ import Link from "next/link"
 type DetailsItemProps = {
   id: number
   title: string
-  fullDesc: string
+  fullDescription: string
   price: number
   image: string
 }
 
-const Detail = ({ id, title, fullDesc, price, image }: DetailsItemProps) => {
+const Detail = ({
+  id,
+  title,
+  fullDescription,
+  price,
+  image,
+}: DetailsItemProps) => {
   return (
     <div className='flex justify-center'>
       <div className='flex w-[60%] gap-[40px] border-1'>
@@ -25,7 +31,7 @@ const Detail = ({ id, title, fullDesc, price, image }: DetailsItemProps) => {
         </div>
         <div className=''>
           <h3 className='product-title'>{title}</h3>
-          <p className='product-description'>{fullDesc}</p>
+          <p className='product-description'>{fullDescription}</p>
           <h4 className='price'>
             current price: <span>${price}</span>
           </h4>
