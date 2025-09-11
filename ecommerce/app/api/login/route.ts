@@ -20,6 +20,12 @@ export async function POST(req: Request) {
 
   return NextResponse.json({
     message: "✅ Login successful",
-    user: { name: user.firstName, email: user.email },
+    user: {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      phone: user.phone,
+      dateOfBirth: user.dateOfBirth,
+    },
   })
 }

@@ -1,37 +1,60 @@
 "use client"
 import React, { createContext, useContext, useState, ReactNode } from "react"
-
-interface CartItem {
-  productId: number
-  quantity: number
-}
+import { useAuth } from "@/context/AuthContext"
 
 interface CartContextType {
-  cart: CartItem[]
-  addToCart: (productId: number) => void
-  removeFromCart: (productId: number) => void
+  cart: number[]
+  addToCart: (id: number) => void
+  removeFromCart: (id: number) => void
   clearCart: () => void
 }
 
-const CartContext = createContext<CartContextType | undefined>(undefined)
+const CartContext = createContext<any>(null)
 
-export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [cart, setCart] = useState<CartItem[]>([])
+export const CartProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const { user } = useAuth()
+  const [cart, setCart] = useState<number[]>([])
 
-  const addToCart = (productId: number) => {
-    setCart(prev =>
-      prev.some(item => item.productId === productId)
-        ? prev.map(item =>
-            item.productId === productId
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          )
-        : [...prev, { productId, quantity: 1 }]
-    )
+  const loadCart = async () => {
+    if (!user) return
+    const res = await fetch("/api/cart/get", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: user.email })
+    })
+    const data = await res.json()
+    setCart(data.cart)
   }
 
-  const removeFromCart = (productId: number) => {
-    setCart(prev => prev.filter(item => item.productId !== productId))
+  // const addToCart = (id: number) => setCart((prev) => [...prev, id])
+
+
+  const addToCart = async (productId: number) => {
+    if (!user) return
+    const res = await fetch("/api/cart/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: user.email, productId })
+    })
+    const data = await res.json()
+    setCart(data.cart)
+  }
+
+  // const removeFromCart = (id: number) =>
+  //   setCart((prev) => prev.filter((item) => item !== id))
+
+
+  const removeFromCart = async (productId: number) => {
+    if (!user) return
+    const res = await fetch("/api/cart/remove", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: user.email, productId })
+    })
+    const data = await res.json()
+    setCart(data.cart)
   }
 
   const clearCart = () => setCart([])

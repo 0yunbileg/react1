@@ -6,7 +6,7 @@ import { GiMountains } from "react-icons/gi"
 
 const Header = () => {
   const { loggedIn, user, logout } = useAuth()
-  console.log("lastname: ", user?.email);
+  console.log("firstname: ", user?.firstName)
   return (
     <header className='p-3 sticky top-0 z-4 bg-white w-[100%]'>
       <div className='container'>
@@ -49,15 +49,15 @@ const Header = () => {
             {loggedIn ? (
               <>
                 <span>Welcome, {user?.firstName}</span>
-                <Link href="/profile">Profile</Link>
-                <button onClick={logout} className="text-red-500">
+                <Link href='/profile'>Profile</Link>
+                <button onClick={logout} className='text-red-500'>
                   Logout
                 </button>
               </>
             ) : (
               <>
-                <Link href="/login">Login</Link>
-                <Link href="/signup">Sign Up</Link>
+                <Link href='/login'>Login</Link>
+                <Link href='/signup'>Sign Up</Link>
               </>
             )}
           </div>

@@ -5,7 +5,12 @@
     "email": "oyunbileoyunbileg20@gmail.com",
     "phone": "94705895",
     "dateOfBirth": "2008-06-09",
-    "password": "1234"
+    "password": "1234",
+    "cart": [
+      8,
+      7,
+      14
+    ]
   },
   {
     "firstName": "Sergelenbaatar",
@@ -13,7 +18,12 @@
     "email": "unclegooner@gmail.com",
     "phone": "11111111",
     "dateOfBirth": "1993-01-01",
-    "password": "0011"
+    "password": "0011",
+    "cart": [
+      1,
+      3,
+      4
+    ]
   },
   {
     "firstName": "Oyun",
@@ -21,6 +31,11 @@
     "email": "oyun@gmail.com",
     "phone": "94671613",
     "dateOfBirth": "2008-09-10",
-    "password": "ouun"
+    "password": "ouun",
+    "cart": [
+      5,
+      6,
+      8
+    ]
   }
 ]
