@@ -36,7 +36,8 @@ const Login: React.FC = () => {
       })
 
       const data = await res.json()
-      login(data.user) // store user in context
+      console.log("LOGIN API RESPONSE:", data.user)   
+      login(data.user)
 
       if (!res.ok) throw new Error(data.message || "Login failed")
 

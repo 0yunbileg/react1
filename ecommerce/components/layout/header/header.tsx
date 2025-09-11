@@ -1,19 +1,14 @@
 "use client"
+import { useAuth } from "@/context/AuthContext"
 import Image from "react-bootstrap"
-import {
-  Navbar,
-  Nav,
-  Container,
-  NavDropdown,
-  Form,
-  Button,
-} from "react-bootstrap"
 import Link from "next/link"
 import { GiMountains } from "react-icons/gi"
 
 const Header = () => {
+  const { loggedIn, user, logout } = useAuth()
+  console.log("lastname: ", user?.email);
   return (
-    <header className='p-3 sticky top-0 z-4 bg-white'>
+    <header className='p-3 sticky top-0 z-4 bg-white w-[100%]'>
       <div className='container'>
         <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
           <a
@@ -50,6 +45,22 @@ const Header = () => {
               </a>
             </li>
           </ul>
+          <div>
+            {loggedIn ? (
+              <>
+                <span>Welcome, {user?.firstName}</span>
+                <Link href="/profile">Profile</Link>
+                <button onClick={logout} className="text-red-500">
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/login">Login</Link>
+                <Link href="/signup">Sign Up</Link>
+              </>
+            )}
+          </div>
           <form
             className='col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3'
             role='search'

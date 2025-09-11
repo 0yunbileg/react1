@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card"
 import { useState } from "react"
 import { FiShoppingCart } from "react-icons/fi"
 import Link from "next/link"
+import { useCart } from "@/context/CartContext"
 
 type CardItemProps = {
   id: number
@@ -21,6 +22,7 @@ const CardItem = ({
   image,
 }: CardItemProps) => {
   const [hovered, setHovered] = useState(false)
+  const { addToCart } = useCart()
 
   return (
     <Card
@@ -50,7 +52,7 @@ const CardItem = ({
             <Link href={`/products/${id}`} className='btn btn-light'>
               Details
             </Link>
-            <Button variant='light' size='sm'>
+            <Button onClick={() => addToCart(id)} variant='light' size='sm'>
               <FiShoppingCart />
             </Button>
           </div>

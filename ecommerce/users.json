@@ -1,15 +1,5 @@
 [
   {
-    "name": "name",
-    "email": "oyunbileg@gmail.com",
-    "password": "1234"
-  },
-  {
-    "name": "user2",
-    "email": "oyunbileg2@gmail.com",
-    "password": "123"
-  },
-  {
     "firstName": "Oyunbileg",
     "lastName": "Battulga",
     "email": "oyunbileoyunbileg20@gmail.com",
@@ -24,5 +14,13 @@
     "phone": "11111111",
     "dateOfBirth": "1993-01-01",
     "password": "0011"
+  },
+  {
+    "firstName": "Oyun",
+    "lastName": "Bileg",
+    "email": "oyun@gmail.com",
+    "phone": "94671613",
+    "dateOfBirth": "2008-09-10",
+    "password": "ouun"
   }
 ]
