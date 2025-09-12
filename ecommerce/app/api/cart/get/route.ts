@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
 
-const USERS_FILE = path.join(process.cwd(), "app/data/users.json")
+const USERS_FILE = path.join(process.cwd(), "users.json")
 
 export async function POST(req: Request) {
   const { email } = await req.json()

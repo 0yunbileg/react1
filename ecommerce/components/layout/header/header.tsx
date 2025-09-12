@@ -1,12 +1,13 @@
 "use client"
 import { useAuth } from "@/context/AuthContext"
+import { useCart } from "@/context/CartContext"
 import Image from "react-bootstrap"
 import Link from "next/link"
 import { GiMountains } from "react-icons/gi"
 
 const Header = () => {
   const { loggedIn, user, logout } = useAuth()
-  console.log("firstname: ", user?.firstName)
+  const { cart } = useCart()
   return (
     <header className='p-3 sticky top-0 z-4 bg-white w-[100%]'>
       <div className='container'>
@@ -45,6 +46,16 @@ const Header = () => {
               </a>
             </li>
           </ul>
+          <div>
+            <Link href='/cart' className='relative'>
+              Cart
+              {cart.length > 0 && (
+                <span className='absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-2 py-0.5'>
+                  {cart.length}
+                </span>
+              )}
+            </Link>
+          </div>
           <div>
             {loggedIn ? (
               <>
