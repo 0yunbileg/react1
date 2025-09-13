@@ -25,3 +25,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
 }
+
+.pet {
+  width: 32px;
+  height: 32px;
+  background: url('/images/JumpCattt.png') left center;
+  animation: play 1s steps(6) infinite;
+  /* 1s = animation speed, steps(6) = 6 frames */
+}
+
+@keyframes play {
+  from {
+    background-position: 0px;
+  }
+
+  to {
+    background-position: -384px;
+  }
+
+  /* -64 * 6 = -384px (move through all frames) */
+}

@@ -17,7 +17,7 @@ export default async function Home({ params }: ProductProps) {
   const product = products.find((p: { id: number }) => p.id == params.id)
   console.log("desc", product.fullDescription)
   return (
-    <div>
+    <div> 
       <Detail
         image={product.image}
         title={product.title}

@@ -22,7 +22,6 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null)
 
-  // optional: load from localStorage on mount to persist across reloads
   useEffect(() => {
     const storedUser = localStorage.getItem("user")
     if (storedUser) setUser(JSON.parse(storedUser))

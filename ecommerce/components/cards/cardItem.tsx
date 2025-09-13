@@ -14,7 +14,7 @@ interface Product {
   shortDescription: string
 }
 
-const CardItem = ({ product }: {product: Product}) => {
+const CardItem = ({ product }: { product: any }) => {
   const [hovered, setHovered] = useState(false)
   const { addToCart, cart } = useCart()
 
@@ -48,8 +48,7 @@ const CardItem = ({ product }: {product: Product}) => {
             </Link>
             <Button
               onClick={() => {
-                addToCart(product.id)
-                console.log("added to cart btn, id: ", product.id, "cart: ", cart)
+                addToCart(product)
               }}
               variant='light'
               size='sm'
