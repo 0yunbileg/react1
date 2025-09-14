@@ -4,6 +4,7 @@ import { useCart } from "@/context/CartContext"
 import Image from "react-bootstrap"
 import Link from "next/link"
 import { GiMountains } from "react-icons/gi"
+import { FiShoppingCart } from "react-icons/fi"
 
 const Header = () => {
   const { loggedIn, user, logout } = useAuth()
@@ -22,34 +23,24 @@ const Header = () => {
           <ul className='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
             <li>
               <a href='/' className='nav-link px-2 text-black'>
-                Home
+                Products
               </a>
             </li>
             <li>
               <a href='#' className='nav-link px-2 text-black'>
-                Features
+                About us
               </a>
             </li>
             <li>
               <a href='#' className='nav-link px-2 text-black'>
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a href='#' className='nav-link px-2 text-black'>
-                FAQs
-              </a>
-            </li>
-            <li>
-              <a href='#' className='nav-link px-2 text-black'>
-                About
+                Contact us
               </a>
             </li>
           </ul>
           <div>
             <Link href='/cart' className='relative'>
-              Cart
-              {cart.length > 0 && (
+              <FiShoppingCart size={22} color='black' />
+              {cart.length > 0 && loggedIn && (
                 <span className='absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-2 py-0.5'>
                   {cart.length}
                 </span>
@@ -60,7 +51,9 @@ const Header = () => {
             {loggedIn ? (
               <>
                 <span>Welcome, {user?.firstName}</span>
-                <Link href='/profile'>Profile</Link>
+                <Link className='' href='/profile'>
+                  Profile
+                </Link>
                 <button onClick={logout} className='text-red-500'>
                   Logout
                 </button>

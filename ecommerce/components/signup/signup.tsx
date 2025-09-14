@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import { useAuth } from "@/context/AuthContext" // <-- adjust path if needed
 
 interface SignUpFormData {
   firstName: string
@@ -12,6 +13,7 @@ interface SignUpFormData {
 }
 
 const SignUp: React.FC = () => {
+  const { register } = useAuth()
   const [formData, setFormData] = useState<SignUpFormData>({
     firstName: "",
     lastName: "",
@@ -28,23 +30,15 @@ const SignUp: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setMessage("")
 
-    try {
-      const res = await fetch("/api/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
+    const result = register({ ...formData, id: Date.now().toString() }) // ⬅️ use AuthContext instead of fetch
 
-      const data = await res.json()
-
-      if (!res.ok) throw new Error(data.message || "Signup failed")
-
-      setMessage(`✅ ${data.message}`)
+    if (result.ok) {
+      setMessage(`✅ ${result.message}`)
       setFormData({
         firstName: "",
         lastName: "",
@@ -53,11 +47,11 @@ const SignUp: React.FC = () => {
         dateOfBirth: "",
         password: "",
       })
-    } catch (err: any) {
-      setMessage(err.message || "❌ Something went wrong")
-    } finally {
-      setLoading(false)
+    } else {
+      setMessage(`❌ ${result.message}`)
     }
+
+    setLoading(false)
   }
 
   return (

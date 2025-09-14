@@ -18,13 +18,7 @@ export default async function Home({ params }: ProductProps) {
   console.log("desc", product.fullDescription)
   return (
     <div> 
-      <Detail
-        image={product.image}
-        title={product.title}
-        fullDescription={product.fullDescription}
-        id={product.id}
-        price={product.price}
-      />
+      <Detail product={product}/>
     </div>
   )
 }

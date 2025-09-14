@@ -28,9 +28,10 @@ body {
 
 .pet {
   width: 32px;
-  height: 32px;
+  height: 38px;
   background: url('/images/JumpCattt.png') left center;
   animation: play 1s steps(6) infinite;
+  border-bottom: 10px solid green;
   /* 1s = animation speed, steps(6) = 6 frames */
 }
 

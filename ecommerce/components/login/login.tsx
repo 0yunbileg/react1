@@ -10,7 +10,6 @@ interface LoginFormData {
 
 const Login: React.FC = () => {
   const { login } = useAuth()
-
   const [formData, setFormData] = useState<LoginFormData>({
     email: "",
     password: "",
@@ -23,31 +22,23 @@ const Login: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setMessage("")
 
-    try {
-      const res = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
+    // Call AuthContext login
+    const result = login({ email: formData.email, password: formData.password })
 
-      const data = await res.json()
-      login(data.user)
-      console.log("LOGIN API RESPONSE:", data)
-
-      if (!res.ok) throw new Error(data.message || "Login failed")
-
-      setMessage(`✅ Welcome back, ${data.user.name}`)
-      // Optional: redirect, set cookie, or save user info
-    } catch (err: any) {
-      setMessage(err.message || "❌ Something went wrong")
-    } finally {
-      setLoading(false)
+    if (result.ok) {
+      setMessage(`✅ Welcome back!`)
+      setFormData({ email: "", password: "" })
+      // Optional: redirect user after login
+    } else {
+      setMessage(`❌ ${result.message}`)
     }
+
+    setLoading(false)
   }
 
   return (

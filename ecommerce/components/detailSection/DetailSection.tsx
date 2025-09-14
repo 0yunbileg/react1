@@ -1,28 +1,17 @@
 "use client"
 import Image from "next/image"
+import Button from "react-bootstrap/Button"
 import Link from "next/link"
+import { useCart } from "@/context/CartContext"
 
-type DetailsItemProps = {
-  id: number
-  title: string
-  fullDescription: string
-  price: number
-  image: string
-}
-
-const Detail = ({
-  id,
-  title,
-  fullDescription,
-  price,
-  image,
-}: DetailsItemProps) => {
+const Detail = ({ product }: { product: any }) => {
+  const { addToCart } = useCart()
   return (
     <div className='flex justify-center'>
       <div className='flex w-[60%] gap-[40px] border-1'>
         <div className='' id=''>
           <Image
-            src={image}
+            src={product.image}
             alt='book cover'
             width={400}
             height={600}
@@ -30,14 +19,20 @@ const Detail = ({
           />
         </div>
         <div className=''>
-          <h3 className='product-title'>{title}</h3>
-          <p className='product-description'>{fullDescription}</p>
+          <h3 className='product-title'>{product.title}</h3>
+          <p className='product-description'>{product.fullDescription}</p>
           <h4 className='price'>
-            current price: <span>${price}</span>
+            current price: <span>${product.price}</span>
           </h4>
-          <button className='add-to-cart btn btn-primary' type='button'>
+          <Button
+            onClick={() => {
+              addToCart(product)
+            }}
+            variant='primary'
+            size='sm'
+          >
             add to cart
-          </button>
+          </Button>
         </div>
       </div>
     </div>

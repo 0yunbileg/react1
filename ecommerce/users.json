@@ -40,5 +40,13 @@
       6,
       8
     ]
+  },
+  {
+    "firstName": "bat",
+    "lastName": "bat",
+    "email": "bat@gmail.com",
+    "phone": "11221122",
+    "dateOfBirth": "1111-11-11",
+    "password": "1111"
   }
 ]
