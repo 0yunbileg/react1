@@ -1,19 +1,37 @@
 "use client"
 import { useCart } from "@/context/CartContext"
+import Button from "react-bootstrap/Button"
 
 export default function CartPage() {
-  const { cart, removeFromCart, clearCart } = useCart()
+  const { cart, updateQuantity, removeFromCart, clearCartItems } = useCart()
 
   return (
     <div>
       <h1>Your Cart</h1>
       {cart.map((item) => (
         <div key={item.id}>
-          <span>{item.title}</span>
-          <button onClick={() => removeFromCart(item.id)}>Remove</button>
+          <h3>{item.title}</h3>
+          <p>price for one: {item.price}</p>
+          <p>price for all: {item.price * item.quantity}</p>
+          <Button
+            variant='light'
+            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+          >
+            -
+          </Button>
+          <span>quantity: {item.quantity}</span>
+          <Button
+            variant='light'
+            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+          >
+            +
+          </Button>
+          <Button variant='danger' onClick={() => removeFromCart(item.id)}>
+            Remove
+          </Button>
         </div>
       ))}
-      <button onClick={clearCart}>Clear Cart</button>
+      <Button onClick={clearCartItems}>Clear Cart</Button>
     </div>
   )
 }

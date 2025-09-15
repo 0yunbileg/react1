@@ -48,7 +48,7 @@ const CardItem = ({ product }: { product: any }) => {
             </Link>
             <Button
               onClick={() => {
-                addToCart(product)
+                addToCart({ id: product.id, title: product.title, price: product.price })
               }}
               variant='light'
               size='sm'
