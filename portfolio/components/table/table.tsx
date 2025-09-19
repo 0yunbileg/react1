@@ -2,6 +2,8 @@
 import React from "react"
 import { useEffect, useState } from "react"
 import TableItem from "./tableItem"
+import Details from "./details"
+import PropertySelector from "./propertySelector"
 
 interface Element {
   name: string
@@ -42,9 +44,11 @@ interface Element {
   }
 }
 
-const Table = () => {
+const Table: React.FC = () => {
   const [elements, setElements] = useState<Element[]>([])
   const [property, setProperty] = useState<string>("category")
+  const [selectedElement, setSelectedElement] = useState<Element | null>(null)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -57,33 +61,53 @@ const Table = () => {
     fetchData()
   }, [])
 
+  const handleSelect = (element: Element) => {
+    setSelectedElement(element)
+    setSidebarOpen(true)
+  }
+
+  const handleCloseSidebar = () => {
+    setSidebarOpen(false)
+    setSelectedElement(null)
+  }
+
   return (
-    <div className='p-6'>
-      <h1 className='text-2xl font-bold mb-4'>Periodic Table</h1>
-      <select
-        value={property}
-        onChange={(e) => setProperty(e.target.value)}
-        className='mb-4 p-2 border rounded'
+    <div className='flex'>
+      <div
+        className={`flex-1 p-6 transition-all duration-300 ${
+          sidebarOpen ? "lg:mr-2" : ""
+        }`}
       >
-        <option value='category'>Category</option>
-        <option value='boil'>Boiling Point</option>
-        <option value='melt'>Melting Point</option>
-        <option value='density'>Density</option>
-        <option value='atomic_mass'>Atomic Mass</option>
-      </select>
-      <div className='grid grid-cols-18 gap-2'>
-        {elements.map((element) => (
-          <div
-            key={element.number}
-            style={{
-              gridColumnStart: element.xpos,
-              gridRowStart: element.ypos,
-            }}
-          >
-            <TableItem key={element.number} element={element} property={property}/>
-          </div>
-        ))}
+        <h1 className='text-2xl font-bold mb-4'>Periodic Table</h1>
+
+        <PropertySelector property={property} onChange={setProperty} />
+
+        <div className='grid grid-cols-18 gap-2 min-w-[1220px]'>
+          {elements.map((element) => (
+            <div
+              key={element.number}
+              style={{
+                gridColumnStart: element.xpos,
+                gridRowStart: element.ypos,
+              }}
+            >
+              <TableItem
+                key={element.number}
+                element={element}
+                property={property}
+                onClick={handleSelect}
+              />
+            </div>
+          ))}
+        </div>
       </div>
+
+      {sidebarOpen && (
+        <Details
+          selectedElement={selectedElement}
+          onClose={handleCloseSidebar}
+        />
+      )}
     </div>
   )
 }

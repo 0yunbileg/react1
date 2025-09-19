@@ -1,10 +1,10 @@
 import Image from "next/image"
-import Hero from "@/components/hero/hero"
+import Table from "@/components/table/table"
 
 export default function Home() {
   return (
-    <div className='mt-[40px] '>
-      <Hero />
+    <div className='mt-[40px]'>
+      <Table />
     </div>
   )
 }

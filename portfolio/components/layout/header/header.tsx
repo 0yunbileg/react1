@@ -4,30 +4,45 @@ import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavDropdown from "react-bootstrap/NavDropdown"
-
+import { useState } from "react"
 const Header = () => {
-  console.log({ Container, Nav, Navbar, NavDropdown })
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Navbar expand='lg' className='bg-body-tertiary'>
-      <Container>
-        <Navbar.Brand href='#home'>React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+    <Navbar
+      expand='lg'
+      className='!fixed w-[100%] top-0 left-0 z-50 bg-gradient-to-r from-[#0f172a] via-[#1e1b4b] to-[#4c1d95] shadow-md'
+    >
+      <Container className='flex items-center justify-between'>
+        {/* Brand */}
+        <Navbar.Brand
+          href='/'
+          className='text-2xl font-bold tracking-wide text-white hover:text-purple-300 transition-colors'
+        >
+          Elemently
+        </Navbar.Brand>
+
+        {/* Toggle (hamburger) */}
+        <Navbar.Toggle
+          aria-controls='basic-navbar-nav'
+          className='border-0 focus:outline-none focus:ring-2 focus:ring-purple-400 navbar-toggler-white'
+        />
+
+        {/* Links */}
         <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='me-auto'>
-            <Nav.Link href='#home'>Home</Nav.Link>
-            <Nav.Link href='#link'>Link</Nav.Link>
-            <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-              <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.2'>
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='#action/3.4'>
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+          <Nav className='ms-auto flex items-center space-x-6 text-lg'>
+            <Nav.Link
+              href='/periodic-table'
+              className='!text-white hover:!text-purple-300 transition-colors'
+            >
+              Periodic Table
+            </Nav.Link>
+            <Nav.Link
+              href='/about'
+              className='!text-white hover:!text-purple-300 transition-colors'
+            >
+              About
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

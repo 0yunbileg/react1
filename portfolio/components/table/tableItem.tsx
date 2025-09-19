@@ -42,13 +42,13 @@ interface Element {
 interface Props {
   element: Element
   property: string
+  onClick: (element: Element) => void
 }
 
-const TableItem: React.FC<Props> = ({ element, property }) => {
+const TableItem: React.FC<Props> = ({ element, property, onClick }) => {
   let bgColor = "#f1f5f9"
 
   if (property === "category") {
-    // simple category → color mapping
     const colors: Record<string, string> = {
       "noble gas": "#a3e635",
       "alkali metal": "#f87171",
@@ -64,30 +64,28 @@ const TableItem: React.FC<Props> = ({ element, property }) => {
   }
 
   if (property === "boil" && element.boil) {
-    // normalize boiling point values for color intensity
-    const max = 6000 // approx max boiling point (Tungsten)
+    const max = 6000
     const intensity = Math.min(element.boil / max, 1)
     const red = Math.floor(255 * intensity)
     bgColor = `rgb(${red}, 100, 100)`
   }
 
   if (property === "melt" && element.melt) {
-    // normalize melting point values for color intensity
-    const max = 3700  // approx max melting point (Tungsten)
+    const max = 3700
     const intensity = Math.min(element.melt / max, 1)
     const green = Math.floor(255 * intensity)
     bgColor = `rgb(100, ${green}, 100)`
   }
 
   if (property === "density" && element.density) {
-    const max = 22 // osmium ~22 g/cm³
+    const max = 22
     const intensity = Math.min(element.density / max, 1)
     const blue = Math.floor(255 * intensity)
     bgColor = `rgb(100, 100, ${blue})`
   }
 
   if (property === "atomic_mass" && element.atomic_mass) {
-    const max = 300 // osmium ~22 g/cm³
+    const max = 300
     const intensity = Math.min(element.atomic_mass / max, 1)
     const blue = Math.floor(255 * intensity)
     bgColor = `rgb(100, ${blue}, ${blue})`
@@ -96,8 +94,9 @@ const TableItem: React.FC<Props> = ({ element, property }) => {
   return (
     <div
       key={element.number}
-      className='p-1 rounded shadow text-center transition hover:scale-105 hover:shadow-lg'
+      className='p-1 rounded shadow text-center transition hover:scale-105 hover:shadow-lg min-w-[60px]'
       style={{ backgroundColor: bgColor }}
+      onClick={() => onClick(element)}
     >
       <p className='m-0'>{element.number}</p>
       <p className='m-0 font-bold'>{element.symbol}</p>
