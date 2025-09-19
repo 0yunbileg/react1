@@ -71,6 +71,14 @@ const TableItem: React.FC<Props> = ({ element, property }) => {
     bgColor = `rgb(${red}, 100, 100)`
   }
 
+  if (property === "melt" && element.melt) {
+    // normalize melting point values for color intensity
+    const max = 3700  // approx max melting point (Tungsten)
+    const intensity = Math.min(element.melt / max, 1)
+    const green = Math.floor(255 * intensity)
+    bgColor = `rgb(100, ${green}, 100)`
+  }
+
   if (property === "density" && element.density) {
     const max = 22 // osmium ~22 g/cm³
     const intensity = Math.min(element.density / max, 1)
@@ -78,15 +86,22 @@ const TableItem: React.FC<Props> = ({ element, property }) => {
     bgColor = `rgb(100, 100, ${blue})`
   }
 
+  if (property === "atomic_mass" && element.atomic_mass) {
+    const max = 300 // osmium ~22 g/cm³
+    const intensity = Math.min(element.atomic_mass / max, 1)
+    const blue = Math.floor(255 * intensity)
+    bgColor = `rgb(100, ${blue}, ${blue})`
+  }
+
   return (
     <div
       key={element.number}
-      className='p-2 rounded shadow text-center transition hover:scale-105 hover:shadow-lg'
+      className='p-1 rounded shadow text-center transition hover:scale-105 hover:shadow-lg'
       style={{ backgroundColor: bgColor }}
     >
-      <p className=''>{element.number}</p>
-      <p className='font-bold'>{element.symbol}</p>
-      <p className='hidden xl:block'>{element.atomic_mass.toFixed(2)}</p>
+      <p className='m-0'>{element.number}</p>
+      <p className='m-0 font-bold'>{element.symbol}</p>
+      <p className='m-0 hidden xl:block'>{element.atomic_mass.toFixed(2)}</p>
     </div>
   )
 }
