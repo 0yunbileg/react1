@@ -25,7 +25,11 @@ const CardItem = ({ product }: { product: any }) => {
       onMouseLeave={() => setHovered(false)}
     >
       <div className='relative'>
-        <Card.Img variant='top' src={product.image} className='bg-[#F7CFD8]' />
+        <Card.Img
+          variant='top'
+          src={product.image}
+          className='p-[26px] bg-[#D6C0B3]'
+        />
 
         <div
           style={{
@@ -48,7 +52,11 @@ const CardItem = ({ product }: { product: any }) => {
             </Link>
             <Button
               onClick={() => {
-                addToCart({ id: product.id, title: product.title, price: product.price })
+                addToCart({
+                  id: product.id,
+                  title: product.title,
+                  price: product.price,
+                })
               }}
               variant='light'
               size='sm'

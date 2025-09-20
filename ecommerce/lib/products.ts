@@ -6,7 +6,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Our sourdough bread is made using natural fermentation, giving it a rich tangy flavor and chewy crust. Baked daily with organic flour.",
     price: 4.99,
-    image: "/images/products/product-img-5.png",
+    image: "/images/products/product-img-1.png",
     category: "bread",
   },
   {
@@ -157,7 +157,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Classic chewy oatmeal cookies loaded with sweet raisins and a hint of cinnamon. Baked fresh daily.",
     price: 3.5,
-    image: "/images/products/product-img-16.png",
+    image: "/images/products/product-img-15.png",
     category: "cookie",
   },
   {
@@ -167,7 +167,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Freshly baked soft pretzel with a golden crust, lightly salted. Perfect with mustard or cheese dip.",
     price: 2.25,
-    image: "/images/products/product-img-17.png",
+    image: "/images/products/product-img-15.png",
     category: "bread",
   },
   {
@@ -177,7 +177,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Moist vanilla cupcake topped with buttercream frosting. 100% gluten-free and baked with almond flour.",
     price: 2.99,
-    image: "/images/products/product-img-18.png",
+    image: "/images/products/product-img-15.png",
     category: "cake",
   },
   {
@@ -187,7 +187,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Creamy pumpkin filling baked in a flaky crust, flavored with cinnamon, nutmeg, and cloves. A fall favorite.",
     price: 4.25,
-    image: "/images/products/product-img-19.png",
+    image: "/images/products/product-img-15.png",
     category: "cake",
   },
   {
@@ -197,7 +197,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "A box of 6 freshly baked chocolate chip cookies, crispy on the edges and chewy in the center.",
     price: 5.5,
-    image: "/images/products/product-img-20.png",
+    image: "/images/products/product-img-15.png",
     category: "cookie",
   },
   {
@@ -207,7 +207,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Wholesome bread baked with a mix of whole grains and seeds. High in fiber, soft inside with a hearty crust.",
     price: 5.25,
-    image: "/images/products/multigrain-bread.png",
+    image: "/images/products/product-img-15.png",
     category: "bread",
   },
   {
@@ -217,7 +217,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Delicate pastry shells filled with vanilla custard and topped with rich chocolate glaze. Sold individually.",
     price: 3.75,
-    image: "/images/products/eclair.png",
+    image: "/images/products/product-img-15.png",
     category: "pastry",
   },
   {
@@ -227,7 +227,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Classic red velvet cake slice layered with smooth cream cheese frosting. Elegant and indulgent.",
     price: 5.0,
-    image: "/images/products/redvelvet-cake.png",
+    image: "/images/products/product-img-15.png",
     category: "cake",
   },
   {
@@ -237,7 +237,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Traditional Middle Eastern dessert made of layers of filo pastry, walnuts, and honey syrup.",
     price: 6.25,
-    image: "/images/products/baklava.png",
+    image: "/images/products/product-img-15.png",
     category: "specialty",
   },
   {
@@ -247,7 +247,7 @@ export const PRODUCTS_DB = [
     fullDescription:
       "A pack of 4 assorted donuts with flavors including glazed, chocolate, strawberry sprinkle, and filled jelly.",
     price: 7.5,
-    image: "/images/products/donut-box.png",
+    image: "/images/products/product-img-15.png",
     category: "pastry",
   },
 ]

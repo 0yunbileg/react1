@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const Slider = () => {
   return (
-    <Carousel className='max-h-[400px] overflow-hidden'>
+    <Carousel className='flex items-center max-h-[800px] overflow-hidden'>
       <Carousel.Item className='flex items-center'>
         <img src={"/images/slider/slider-img-1.jpg"} alt='slider image' />
       </Carousel.Item>
