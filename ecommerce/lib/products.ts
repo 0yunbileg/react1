@@ -7,6 +7,7 @@ export const PRODUCTS_DB = [
       "Our sourdough bread is made using natural fermentation, giving it a rich tangy flavor and chewy crust. Baked daily with organic flour.",
     price: 4.99,
     image: "/images/products/product-img-1.png",
+    image1: "/images/products/product-img-1.jpg",
     category: "bread",
   },
   {
@@ -16,7 +17,8 @@ export const PRODUCTS_DB = [
     fullDescription:
       "A classic French pastry with layers of buttery dough filled with rich dark chocolate. Perfect for breakfast or a sweet snack.",
     price: 2.5,
-    image: "/images/products/product-img-5.png",
+    image: "/images/products/product-img-2.png",
+    image1: "/images/products/product-img-2.jpg",
     category: "pastry",
   },
   {
@@ -26,7 +28,8 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Moist and fluffy muffin bursting with sweet blueberries. Made with whole wheat flour and topped with a light sugar crust.",
     price: 2.25,
-    image: "/images/products/product-img-5.png",
+    image: "/images/products/product-img-3.png",
+    image1: "/images/products/product-img-3.jpg",
     category: "pastry",
   },
   {
@@ -36,7 +39,8 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Soft dough swirled with cinnamon sugar, topped with creamy vanilla glaze. A comforting classic for any time of the day.",
     price: 3.0,
-    image: "/images/products/product-img-5.png",
+    image: "/images/products/product-img-4.png",
+    image1: "/images/products/product-img-4.jpg",
     category: "pastry",
   },
   {
@@ -47,6 +51,7 @@ export const PRODUCTS_DB = [
       "Traditional French baguette baked fresh daily. Crispy golden crust with a light and airy interior. Ideal for sandwiches or dipping.",
     price: 3.5,
     image: "/images/products/product-img-5.png",
+    image1: "/images/products/product-img-5.jpg",
     category: "bread",
   },
   {
@@ -57,6 +62,7 @@ export const PRODUCTS_DB = [
       "A fudgy, rich chocolate brownie made with almond flour. Gluten-free, but just as indulgent as the classic version.",
     price: 2.99,
     image: "/images/products/product-img-6.png",
+    image1: "/images/products/product-img-6.jpg",
     category: "cake",
   },
   {
@@ -66,7 +72,8 @@ export const PRODUCTS_DB = [
     fullDescription:
       "Buttery croissant filled with homemade almond cream, topped with sliced almonds and powdered sugar.",
     price: 3.25,
-    image: "/images/products/product-img-7.png",
+    image: "/images/products/product-img-6.png",
+    image1: "/images/products/product-img-7.jpg",
     category: "pastry",
   },
   {
@@ -77,6 +84,7 @@ export const PRODUCTS_DB = [
       "Classic banana bread baked with ripe bananas and crunchy walnuts. Perfect as a snack or breakfast treat.",
     price: 5.0,
     image: "/images/products/product-img-8.png",
+    image1: "/images/products/product-img-8.jpg",
     category: "bread",
   },
   {
@@ -87,6 +95,7 @@ export const PRODUCTS_DB = [
       "Colorful box of 6 handmade French macarons with assorted flavors: pistachio, raspberry, vanilla, chocolate, lemon, and coffee.",
     price: 12.99,
     image: "/images/products/product-img-9.png",
+    image1: "/images/products/product-img-9.jpg",
     category: "specialty",
   },
   {
@@ -97,6 +106,7 @@ export const PRODUCTS_DB = [
       "Creamy New York-style cheesecake on a buttery graham cracker crust. Rich, smooth, and perfectly sweet.",
     price: 4.75,
     image: "/images/products/product-img-10.png",
+    image1: "/images/products/product-img-10.jpg",
     category: "cake",
   },
   {
@@ -107,6 +117,7 @@ export const PRODUCTS_DB = [
       "Moist carrot cake layered with cinnamon, walnuts, and topped with smooth cream cheese frosting.",
     price: 6.5,
     image: "/images/products/product-img-11.png",
+    image1: "/images/products/product-img-11.jpg",
     category: "cake",
   },
   {
@@ -117,6 +128,7 @@ export const PRODUCTS_DB = [
       "Box of 4 assorted cupcakes with flavors including chocolate, vanilla, red velvet, and cookies & cream. Topped with creamy frosting.",
     price: 9.99,
     image: "/images/products/product-img-12.png",
+    image1: "/images/products/product-img-12.jpg",
     category: "cake",
   },
   {
@@ -127,6 +139,7 @@ export const PRODUCTS_DB = [
       "Homemade apple pie with spiced apple filling and a golden flaky crust. Served by the slice.",
     price: 3.99,
     image: "/images/products/product-img-13.png",
+    image1: "/images/products/product-img-13.jpg",
     category: "cake",
   },
   {
@@ -137,6 +150,7 @@ export const PRODUCTS_DB = [
       "Crisp tart shell filled with pastry cream and topped with fresh strawberries and a light glaze.",
     price: 4.25,
     image: "/images/products/product-img-14.png",
+    image1: "/images/products/product-img-14.jpg",
     category: "pastry",
   },
   {
@@ -147,9 +161,9 @@ export const PRODUCTS_DB = [
       "Decadent chocolate sponge layered with chocolate ganache and frosted with silky chocolate buttercream.",
     price: 18.0,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-15.jpg",
     category: "cake",
   },
-  // --- New 10 products ---
   {
     id: 16,
     title: "Oatmeal Raisin Cookies",
@@ -158,6 +172,7 @@ export const PRODUCTS_DB = [
       "Classic chewy oatmeal cookies loaded with sweet raisins and a hint of cinnamon. Baked fresh daily.",
     price: 3.5,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-16.jpg",
     category: "cookie",
   },
   {
@@ -168,6 +183,7 @@ export const PRODUCTS_DB = [
       "Freshly baked soft pretzel with a golden crust, lightly salted. Perfect with mustard or cheese dip.",
     price: 2.25,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-17.jpg",
     category: "bread",
   },
   {
@@ -178,6 +194,7 @@ export const PRODUCTS_DB = [
       "Moist vanilla cupcake topped with buttercream frosting. 100% gluten-free and baked with almond flour.",
     price: 2.99,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-18.jpg",
     category: "cake",
   },
   {
@@ -188,6 +205,7 @@ export const PRODUCTS_DB = [
       "Creamy pumpkin filling baked in a flaky crust, flavored with cinnamon, nutmeg, and cloves. A fall favorite.",
     price: 4.25,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-19.jpg",
     category: "cake",
   },
   {
@@ -198,6 +216,7 @@ export const PRODUCTS_DB = [
       "A box of 6 freshly baked chocolate chip cookies, crispy on the edges and chewy in the center.",
     price: 5.5,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-20.jpg",
     category: "cookie",
   },
   {
@@ -208,6 +227,7 @@ export const PRODUCTS_DB = [
       "Wholesome bread baked with a mix of whole grains and seeds. High in fiber, soft inside with a hearty crust.",
     price: 5.25,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-21.jpg",
     category: "bread",
   },
   {
@@ -218,6 +238,7 @@ export const PRODUCTS_DB = [
       "Delicate pastry shells filled with vanilla custard and topped with rich chocolate glaze. Sold individually.",
     price: 3.75,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-22.jpg",
     category: "pastry",
   },
   {
@@ -228,6 +249,7 @@ export const PRODUCTS_DB = [
       "Classic red velvet cake slice layered with smooth cream cheese frosting. Elegant and indulgent.",
     price: 5.0,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-23.jpg",
     category: "cake",
   },
   {
@@ -238,6 +260,7 @@ export const PRODUCTS_DB = [
       "Traditional Middle Eastern dessert made of layers of filo pastry, walnuts, and honey syrup.",
     price: 6.25,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-24.jpg",
     category: "specialty",
   },
   {
@@ -248,6 +271,7 @@ export const PRODUCTS_DB = [
       "A pack of 4 assorted donuts with flavors including glazed, chocolate, strawberry sprinkle, and filled jelly.",
     price: 7.5,
     image: "/images/products/product-img-15.png",
+    image1: "/images/products/product-img-25.jpg",
     category: "pastry",
   },
 ]

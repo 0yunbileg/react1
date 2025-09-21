@@ -9,6 +9,8 @@ export async function GET() {
     fullDescription: p.fullDescription,
     price: p.price,
     image: p.image,
+    image1: p.image1,
+    category: p.category,
   }))
   return NextResponse.json(list)
 }
