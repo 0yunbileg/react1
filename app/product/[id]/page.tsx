@@ -5,9 +5,7 @@ interface ProductProps {
 }
 
 async function getProducts() {
-  const res = await fetch("/api/products", {
-    cache: "no-store",
-  })
+  const res = await fetch("/api/products", { cache: "no-store" })
   if (!res.ok) throw new Error("Failed to fetch products")
   return res.json()
 }
@@ -15,16 +13,9 @@ async function getProducts() {
 export default async function ProductPage({ params }: ProductProps) {
   const { id } = params
   const products = await getProducts()
-
   const product = products.find((p: { id: number }) => p.id === Number(id))
 
-  if (!product) {
-    return <div>Product not found</div>
-  }
+  if (!product) return <div>Product not found</div>
 
-  return (
-    <div>
-      <Detail product={product} />
-    </div>
-  )
+  return <Detail product={product} />
 }
