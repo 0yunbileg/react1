@@ -1,27 +1,26 @@
-import Image from "next/image"
 import Detail from "@/components/detailSection/DetailSection"
 
 interface ProductProps {
-  params: Promise<{ id: string }> // 👈 params is async, id is a string
+  params: { id: string }
 }
 
 async function getProducts() {
-  const res = await fetch("http://localhost:3000/api/products", {
-    cache: "no-store", // always fetch fresh
+  const res = await fetch("/api/products", {
+    cache: "no-store",
   })
+  if (!res.ok) throw new Error("Failed to fetch products")
   return res.json()
 }
 
-export default async function Home({ params }: ProductProps) {
-  const { id } = await params // 👈 await here
+export default async function ProductPage({ params }: ProductProps) {
+  const { id } = params
   const products = await getProducts()
+
   const product = products.find((p: { id: number }) => p.id === Number(id))
 
   if (!product) {
     return <div>Product not found</div>
   }
-
-  console.log("desc", product.fullDescription)
 
   return (
     <div>
