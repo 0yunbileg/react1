@@ -13,29 +13,29 @@ const Header = () => {
   const { loggedIn, user, logout } = useAuth()
   const { cart } = useCart()
   return (
-    <header className='p-3 sticky top-0 z-4 bg-[#DCD7C9] w-[100%]'>
+    <header className='p-3 sticky top-0 z-4 bg-[#493628] w-[100%]'>
       <div className='container'>
         <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
           <a
             href='/'
-            className='d-flex align-items-center mr-[30px] mb-2 mb-lg-0 text-black text-decoration-none font-bold text-2xl gap-4'
+            className='d-flex align-items-center mr-[30px] mb-2 mb-lg-0 text-white text-decoration-none font-bold text-2xl gap-4'
           >
             <FaCheese size={36} />
             EcoCarts
           </a>
           <ul className='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
             <li>
-              <a href='/products' className='nav-link px-2 text-black'>
+              <a href='/products' className='nav-link px-2 text-white'>
                 Products
               </a>
             </li>
             <li>
-              <a href='#' className='nav-link px-2 text-black'>
+              <a href='#' className='nav-link px-2 text-white'>
                 About us
               </a>
             </li>
             <li>
-              <a href='#' className='nav-link px-2 text-black'>
+              <a href='#' className='nav-link px-2 text-white'>
                 Contact us
               </a>
             </li>

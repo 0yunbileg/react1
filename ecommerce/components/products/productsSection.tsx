@@ -18,13 +18,11 @@ interface ProductsSectionProps {
 
 const ProductsSection: React.FC<ProductsSectionProps> = ({ products }) => {
   return (
-    <div>
-      <div className="container text-white mb-[100px] mt-[60px]">
-        <div className="grid gap-4 grid-cols-4 mt-[60px]">
-          {products.map((product) => (
-            <CardItem key={product.id} product={product} />
-          ))}
-        </div>
+    <div className='container text-white mb-[100px]'>
+      <div className='grid gap-4 grid-cols-4 '>
+        {products.map((product) => (
+          <CardItem key={product.id} product={product} />
+        ))}
       </div>
     </div>
   )
