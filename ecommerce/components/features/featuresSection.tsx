@@ -33,7 +33,7 @@ const FeaturesSection = () => {
       <h1 className='text-center'>Features</h1>
       <div className='flex justify-between mt-[60px]'>
         {FEATURES.map((feature) => (
-          <FeaturesItem feature={feature} />
+          <FeaturesItem key={feature.id} feature={feature} />
         ))}
       </div>
     </div>

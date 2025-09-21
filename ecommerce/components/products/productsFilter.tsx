@@ -7,8 +7,19 @@ import Row from "react-bootstrap/Row"
 import Tab from "react-bootstrap/Tab"
 import ProductsSection from "./productsSection"
 
+interface Product {
+    id: number
+    title: string
+    shortDescription: string
+    description: string
+    price: number
+    image: string
+    image1: string
+    category: string
+  }
+
 const ProductsFilter = () => {
-  const [products, setProducts] = useState<any[]>([])
+  const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
     async function loadProducts() {

@@ -1,10 +1,11 @@
 import React from "react"
+import { IconType } from "react-icons"
 
-interface Feature {
+export interface Feature {
   id: number
   title: string
   description: string
-  icon: React.ElementType
+  icon: IconType
 }
 
 interface Props {

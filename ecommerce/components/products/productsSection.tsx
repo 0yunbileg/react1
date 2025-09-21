@@ -6,9 +6,11 @@ import CardItem from "../cards/cardItem"
 interface Product {
   id: number
   title: string
+  shortDescription: string
   description: string
   price: number
   image: string
+  image1: string
   category: string
 }
 

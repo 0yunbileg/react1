@@ -5,8 +5,16 @@ import CardItem from "./cardItem"
 import { Button } from "react-bootstrap"
 import { useRouter } from "next/navigation"
 
+interface Product {
+  id: number
+  title: string
+  price: number
+  image1: string
+  shortDescription: string
+}
+
 export default function CardsSection() {
-  const [products, setProducts] = useState<any[]>([])
+  const [products, setProducts] = useState<Product[]>([])
   const router = useRouter()
 
   useEffect(() => {

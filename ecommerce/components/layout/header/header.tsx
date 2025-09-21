@@ -16,28 +16,28 @@ const Header = () => {
     <header className='p-3 sticky top-0 z-4 bg-[#493628] w-[100%]'>
       <div className='container'>
         <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
-          <a
+          <Link
             href='/'
             className='d-flex align-items-center mr-[30px] mb-2 mb-lg-0 text-white text-decoration-none font-bold text-2xl gap-4'
           >
             <FaCheese size={36} />
             EcoCarts
-          </a>
+          </Link>
           <ul className='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
             <li>
-              <a href='/products' className='nav-link px-2 text-white'>
+              <Link href='/products' className='nav-link px-2 text-white'>
                 Products
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='#' className='nav-link px-2 text-white'>
+              <Link href='#' className='nav-link px-2 text-white'>
                 About us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='#' className='nav-link px-2 text-white'>
+              <Link href='#' className='nav-link px-2 text-white'>
                 Contact us
-              </a>
+              </Link>
             </li>
           </ul>
           <div className='flex items-center gap-4'>

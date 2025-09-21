@@ -4,14 +4,22 @@ import Button from "react-bootstrap/Button"
 import Link from "next/link"
 import { useCart } from "@/context/CartContext"
 
-const Detail = ({ product }: { product: any }) => {
+interface Product {
+  id: number
+  title: string
+  price: number
+  image1: string
+  fullDescription: string
+}
+
+const Detail = ({ product }: { product: Product }) => {
   const { addToCart } = useCart()
   return (
     <div className='flex justify-center'>
       <div className='flex w-[60%] gap-[40px] border-1'>
         <div className='' id=''>
           <Image
-            src={product.image}
+            src={product.image1}
             alt='book cover'
             width={400}
             height={600}

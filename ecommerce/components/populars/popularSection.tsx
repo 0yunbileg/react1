@@ -3,8 +3,16 @@
 import { useEffect, useState } from "react"
 import PopularItem from "./popularItem"
 
+interface Product {
+  id: number
+  title: string
+  price: number
+  image1: string
+  shortDescription: string
+}
+
 const PopularSection = () => {
-  const [products, setProducts] = useState<any[]>([])
+  const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
     async function loadProducts() {

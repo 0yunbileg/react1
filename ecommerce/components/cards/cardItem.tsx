@@ -14,7 +14,7 @@ interface Product {
   shortDescription: string
 }
 
-const CardItem = ({ product }: { product: any }) => {
+const CardItem = ({ product }: { product: Product }) => {
   const [hovered, setHovered] = useState(false)
   const { addToCart, cart } = useCart()
 

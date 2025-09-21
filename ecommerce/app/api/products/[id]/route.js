@@ -1,4 +1,4 @@
-import { PRODUCTS_DB } from '../../route';
+import { PRODUCTS_DB } from "@/lib/products"
 
 export async function GET(request, { params }) {
   const { id } = params;

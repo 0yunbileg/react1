@@ -14,7 +14,7 @@ interface Product {
   shortDescription: string
 }
 
-const PopularItem = ({ product }: { product: any }) => {
+const PopularItem = ({ product }: { product: Product }) => {
   const [hovered, setHovered] = useState(false)
   const { addToCart, cart } = useCart()
 
