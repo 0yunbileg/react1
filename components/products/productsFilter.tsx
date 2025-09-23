@@ -8,15 +8,15 @@ import Tab from "react-bootstrap/Tab"
 import ProductsSection from "./productsSection"
 
 interface Product {
-    id: number
-    title: string
-    shortDescription: string
-    description: string
-    price: number
-    image: string
-    image1: string
-    category: string
-  }
+  id: number
+  title: string
+  shortDescription: string
+  description: string
+  price: number
+  image: string
+  image1: string
+  category: string
+}
 
 const ProductsFilter = () => {
   const [products, setProducts] = useState<Product[]>([])
@@ -38,7 +38,7 @@ const ProductsFilter = () => {
           <Col sm={3}>
             <Nav variant='pills' className='flex-column'>
               <Nav.Item>
-                <Nav.Link eventKey='first'>Bread</Nav.Link>
+                <Nav.Link eventKey='first'>All</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey='second'>Pastry</Nav.Link>
@@ -52,13 +52,16 @@ const ProductsFilter = () => {
               <Nav.Item>
                 <Nav.Link eventKey='fifth'>Cookie</Nav.Link>
               </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey='sixth'>Bread</Nav.Link>
+              </Nav.Item>
             </Nav>
           </Col>
           <Col sm={9}>
             <Tab.Content>
               <Tab.Pane eventKey='first'>
                 <ProductsSection
-                  products={products.filter((p) => p.category == "bread")}
+                  products={products.filter((p) => p.category)}
                 />
               </Tab.Pane>
               <Tab.Pane eventKey='second'>
@@ -79,6 +82,11 @@ const ProductsFilter = () => {
               <Tab.Pane eventKey='fifth'>
                 <ProductsSection
                   products={products.filter((p) => p.category == "cookie")}
+                />
+              </Tab.Pane>
+              <Tab.Pane eventKey='sixth'>
+                <ProductsSection
+                  products={products.filter((p) => p.category == "bread")}
                 />
               </Tab.Pane>
             </Tab.Content>

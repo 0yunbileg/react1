@@ -14449,6 +14449,10 @@ textarea.form-control-lg {
     background-color: var(--color-gray-50) !important;
   }
 
+  .\!bg-white {
+    background-color: var(--color-white) !important;
+  }
+
   .bg-\[\#493628\] {
     background-color: #493628;
   }

@@ -153,7 +153,7 @@ const PRODUCTS_DB = [
         fullDescription: "Moist carrot cake layered with cinnamon, walnuts, and topped with smooth cream cheese frosting.",
         price: 6.5,
         image: "/images/products/product-img-11.png",
-        image1: "/images/products/product-img-11.jpg",
+        image1: "/images/products/product-img-11.webp",
         category: "cake"
     },
     {
@@ -213,7 +213,7 @@ const PRODUCTS_DB = [
         fullDescription: "Freshly baked soft pretzel with a golden crust, lightly salted. Perfect with mustard or cheese dip.",
         price: 2.25,
         image: "/images/products/product-img-15.png",
-        image1: "/images/products/product-img-17.jpg",
+        image1: "/images/products/product-img-17.jpeg",
         category: "bread"
     },
     {
@@ -223,7 +223,7 @@ const PRODUCTS_DB = [
         fullDescription: "Moist vanilla cupcake topped with buttercream frosting. 100% gluten-free and baked with almond flour.",
         price: 2.99,
         image: "/images/products/product-img-15.png",
-        image1: "/images/products/product-img-18.jpg",
+        image1: "/images/products/product-img-18.webp",
         category: "cake"
     },
     {
@@ -233,7 +233,7 @@ const PRODUCTS_DB = [
         fullDescription: "Creamy pumpkin filling baked in a flaky crust, flavored with cinnamon, nutmeg, and cloves. A fall favorite.",
         price: 4.25,
         image: "/images/products/product-img-15.png",
-        image1: "/images/products/product-img-19.jpg",
+        image1: "/images/products/product-img-19.webp",
         category: "cake"
     },
     {
@@ -273,7 +273,7 @@ const PRODUCTS_DB = [
         fullDescription: "Classic red velvet cake slice layered with smooth cream cheese frosting. Elegant and indulgent.",
         price: 5.0,
         image: "/images/products/product-img-15.png",
-        image1: "/images/products/product-img-23.jpg",
+        image1: "/images/products/product-img-23.webp",
         category: "cake"
     },
     {
@@ -283,7 +283,7 @@ const PRODUCTS_DB = [
         fullDescription: "Traditional Middle Eastern dessert made of layers of filo pastry, walnuts, and honey syrup.",
         price: 6.25,
         image: "/images/products/product-img-15.png",
-        image1: "/images/products/product-img-24.jpg",
+        image1: "/images/products/product-img-24.webp",
         category: "specialty"
     },
     {

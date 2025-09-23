@@ -24,7 +24,7 @@ const CardItem = ({ product }: { product: Product }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className='relative !h-[100%] !bg-[#F7DCB9] text-white'>
+      <div className='relative !h-[100%] !bg-gray-50 text-white'>
         <Card.Img
           variant='top'
           src={product.image1}
