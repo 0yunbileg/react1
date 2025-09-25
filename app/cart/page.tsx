@@ -1,100 +1,57 @@
-"use client"
-import { useCart } from "@/context/CartContext"
-import Button from "react-bootstrap/Button"
+"use client";
+
+import { useCart } from "@/context/CartContext";
+import CartItem from "@/components/cart/cartItem";
+import { Button } from "react-bootstrap";
 
 export default function CartPage() {
-  const { cart, updateQuantity, removeFromCart, clearCartItems } = useCart()
+  const { cart, updateQuantity, removeFromCart, clearCartItems } = useCart();
+  console.log("Cart contents:", cart[0]);
 
   return (
-    <div>
-      <h1>Your Cart</h1>
-      {cart.map((item) => (
-        <div key={item.id}>
-          <h3>{item.title}</h3>
-          <p>price for one: {item.price}</p>
-          <p>price for all: {item.price * item.quantity}</p>
-          <Button
-            variant='light'
-            onClick={() => updateQuantity(item.id, item.quantity - 1)}
-          >
-            -
-          </Button>
-          <span>quantity: {item.quantity}</span>
-          <Button
-            variant='light'
-            onClick={() => updateQuantity(item.id, item.quantity + 1)}
-          >
-            +
-          </Button>
-          <Button variant='danger' onClick={() => removeFromCart(item.id)}>
-            Remove
-          </Button>
-        </div>
-      ))}
-      <Button onClick={clearCartItems}>Clear Cart</Button>
+    <div className="flex items-center justify-center min-h-screen bg-[#ab886d]">
+      <div className="mt-[60px] p-8 rounded-2xl w-full max-w-2xl text-[#fffbe9]">
+        <h1 className="text-2xl font-bold mb-6 text-center">Your Cart</h1>
+
+        {cart.length === 0 ? (
+          <p className="text-center text-sm">🛒 Your cart is empty</p>
+        ) : (
+          <>
+            {cart.map((item) => (
+              <CartItem
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                quantity={item.quantity}
+                image1={item.image1}
+                shortDescription={item.shortDescription}
+                fullDescription={item.fullDescription}
+                category={item.category}
+                onIncrease={() => updateQuantity(item.id, item.quantity + 1)}
+                onDecrease={() => updateQuantity(item.id, item.quantity - 1)}
+                onRemove={() => removeFromCart(item.id)}
+              />
+            ))}
+
+            <div className="flex justify-between items-center mt-6">
+              <p className="text-lg font-semibold">
+                Total: $
+                {cart
+                  .reduce((sum, item) => sum + item.price * item.quantity, 0)
+                  .toFixed(2)}
+              </p>
+              <Button
+                variant="secondary"
+                onClick={clearCartItems}
+                className="rounded-xl bg-[#ab886d] border-none hover:bg-[#a27b5c]"
+              >
+                Clear Cart
+              </Button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
-  )
+  );
 }
-// import { useEffect, useState } from "react"
-// import { useCart } from "@/context/CartContext"
-
-// interface Product {
-//   id: number
-//   title: string
-//   price: number
-//   image: string
-// }
-
-// export default function CartPage() {
-//   const { cart, removeFromCart } = useCart() // <-- use cart from context
-//   const [products, setProducts] = useState<Product[]>([])
-//   const [loading, setLoading] = useState(true)
-
-//   useEffect(() => {
-//     const loadProducts = async () => {
-//       setLoading(true)
-//       try {
-//         if (!cart || cart.length === 0) {
-//           setProducts([])
-//           return
-//         }
-//         const res = await fetch("/api/products")
-//         const allProducts: Product[] = await res.json()
-//         setProducts(allProducts.filter((p) => cart.includes(p.id)))
-//       } catch (err) {
-//         console.error("Failed to load products:", err)
-//       } finally {
-//         setLoading(false)
-//       }
-//     }
-//     loadProducts()
-//   }, [cart])
-//   if (loading) return <div className='p-6'>Loading cart...</div>
-//   if (!products || products.length === 0)
-//     return <div className='p-6 text-center'>🛒 Your cart is empty.</div>
-
-//   return (
-//     <div className='p-6'>
-//       <h1 className='text-2xl font-bold mb-4'>Your Cart</h1>
-//       <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
-//         {products.map((product) => (
-//           <div key={product.id} className='border p-4 rounded-lg shadow'>
-//             <img
-//               src={product.image}
-//               alt={product.title}
-//               className='w-full h-40 object-cover mb-2 rounded'
-//             />
-//             <h2 className='font-semibold'>{product.title}</h2>
-//             <p className='text-gray-600'>${product.price}</p>
-//             <button
-//               onClick={() => removeFromCart(product.id)} // <-- use context remove
-//               className='mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600'
-//             >
-//               Remove
-//             </button>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }

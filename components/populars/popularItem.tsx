@@ -1,34 +1,36 @@
-"use client"
-import Button from "react-bootstrap/Button"
-import Card from "react-bootstrap/Card"
-import { useState } from "react"
-import { FiShoppingCart } from "react-icons/fi"
-import Link from "next/link"
-import { useCart } from "@/context/CartContext"
+"use client";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import { useState } from "react";
+import { FiShoppingCart } from "react-icons/fi";
+import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 interface Product {
-  id: number
-  title: string
-  price: number
-  image1: string
-  shortDescription: string
+  id: number;
+  title: string;
+  price: number;
+  image1: string;
+  shortDescription: string;
+  fullDescription: string;
+  category: string;
 }
 
 const PopularItem = ({ product }: { product: Product }) => {
-  const [hovered, setHovered] = useState(false)
-  const { addToCart, cart } = useCart()
+  const [hovered, setHovered] = useState(false);
+  const { addToCart, cart } = useCart();
 
   return (
     <Card
-      className='!rounded-3xl w-[24rem] !font-serif relative overflow-hidden !bg-gray-50'
+      className="!rounded-3xl w-[24rem] !font-serif relative overflow-hidden !bg-gray-50"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className='relative '>
+      <div className="relative ">
         <Card.Img
-          variant='top'
+          variant="top"
           src={product.image1}
-          className='bg-gray-50 !w-[100%] !aspect-1/1'
+          className="bg-gray-50 !w-[100%] !aspect-1/1"
         />
 
         <div
@@ -45,21 +47,15 @@ const PopularItem = ({ product }: { product: Product }) => {
             textAlign: "center",
           }}
         >
-          <p className='mb-3'>{product.shortDescription}</p>
-          <div className='d-flex gap-2'>
-            <Link href={`/product/${product.id}`} className='btn btn-light'>
+          <p className="mb-3">{product.shortDescription}</p>
+          <div className="d-flex gap-2">
+            <Link href={`/product/${product.id}`} className="btn btn-light">
               Details
             </Link>
             <Button
-              onClick={() => {
-                addToCart({
-                  id: product.id,
-                  title: product.title,
-                  price: product.price,
-                })
-              }}
-              variant='light'
-              size='sm'
+              onClick={() => addToCart(product)}
+              variant="light"
+              size="sm"
             >
               <FiShoppingCart />
             </Button>
@@ -67,16 +63,16 @@ const PopularItem = ({ product }: { product: Product }) => {
         </div>
       </div>
 
-      <Card.Body className='text-center !text-[#493628]'>
-        <Card.Title className='!text-2xl !font-bold'>
+      <Card.Body className="text-center !text-[#493628]">
+        <Card.Title className="!text-2xl !font-bold">
           {product.title}
         </Card.Title>
-        <Card.Text className='text-xl px-7'>
+        <Card.Text className="text-xl px-7">
           {product.shortDescription}
         </Card.Text>
       </Card.Body>
     </Card>
-  )
-}
+  );
+};
 
-export default PopularItem
+export default PopularItem;

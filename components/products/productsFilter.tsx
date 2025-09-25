@@ -1,100 +1,73 @@
-"use client"
-import React from "react"
-import { useEffect, useState } from "react"
-import Col from "react-bootstrap/Col"
-import Nav from "react-bootstrap/Nav"
-import Row from "react-bootstrap/Row"
-import Tab from "react-bootstrap/Tab"
-import ProductsSection from "./productsSection"
+"use client";
+import React, { useEffect, useState } from "react";
+import ProductsSection from "./productsSection";
 
 interface Product {
-  id: number
-  title: string
-  shortDescription: string
-  description: string
-  price: number
-  image: string
-  image1: string
-  category: string
+  id: number;
+  title: string;
+  shortDescription: string;
+  description: string;
+  price: number;
+  image: string;
+  image1: string;
+  category: string;
 }
 
+const categories = [
+  { key: "all", label: "All" },
+  { key: "pastry", label: "Pastry" },
+  { key: "cake", label: "Cake" },
+  { key: "specialty", label: "Specialty" },
+  { key: "cookie", label: "Cookie" },
+  { key: "bread", label: "Bread" },
+];
+
 const ProductsFilter = () => {
-  const [products, setProducts] = useState<Product[]>([])
+  const [products, setProducts] = useState<Product[]>([]);
+  const [active, setActive] = useState("all");
 
   useEffect(() => {
     async function loadProducts() {
-      const res = await fetch("/api/products")
-      const data = await res.json()
-      setProducts(data)
+      const res = await fetch("/api/products");
+      const data = await res.json();
+      setProducts(data);
     }
-    loadProducts()
-  }, [])
+    loadProducts();
+  }, []);
 
-  console.log(products.map((p) => p.category))
+  const filtered =
+    active === "all" ? products : products.filter((p) => p.category === active);
+
   return (
-    <div>
-      <Tab.Container id='left-tabs-example' defaultActiveKey='first'>
-        <Row>
-          <Col sm={3}>
-            <Nav variant='pills' className='flex-column'>
-              <Nav.Item>
-                <Nav.Link eventKey='first'>All</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey='second'>Pastry</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey='third'>Cake</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey='fourth'>Specialty</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey='fifth'>Cookie</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey='sixth'>Bread</Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Col>
-          <Col sm={9}>
-            <Tab.Content>
-              <Tab.Pane eventKey='first'>
-                <ProductsSection
-                  products={products.filter((p) => p.category)}
-                />
-              </Tab.Pane>
-              <Tab.Pane eventKey='second'>
-                <ProductsSection
-                  products={products.filter((p) => p.category == "pastry")}
-                />
-              </Tab.Pane>
-              <Tab.Pane eventKey='third'>
-                <ProductsSection
-                  products={products.filter((p) => p.category == "cake")}
-                />
-              </Tab.Pane>
-              <Tab.Pane eventKey='fourth'>
-                <ProductsSection
-                  products={products.filter((p) => p.category == "specialty")}
-                />
-              </Tab.Pane>
-              <Tab.Pane eventKey='fifth'>
-                <ProductsSection
-                  products={products.filter((p) => p.category == "cookie")}
-                />
-              </Tab.Pane>
-              <Tab.Pane eventKey='sixth'>
-                <ProductsSection
-                  products={products.filter((p) => p.category == "bread")}
-                />
-              </Tab.Pane>
-            </Tab.Content>
-          </Col>
-        </Row>
-      </Tab.Container>
-    </div>
-  )
-}
+    <div className="min-h-screen p-6">
+      <div className="flex flex-col md:flex-row gap-6">
+        {/* Sidebar */}
+        <aside className="w-full md:w-1/4 bg-[#493628] text-white rounded-2xl shadow-lg p-4">
+          <nav className="flex md:flex-col gap-3">
+            {categories.map((c) => (
+              <button
+                key={c.key}
+                onClick={() => setActive(c.key)}
+                className={`w-full px-4 py-2 rounded-xl text-left font-medium transition-all 
+                ${
+                  active === c.key
+                    ? "!rounded-2xl bg-[#ab886d] text-white shadow-md"
+                    : "!rounded-2xl bg-white text-[#493628] hover:text-[#ab886d]"
+                }`}
+              >
+                {c.label}
+              </button>
+            ))}
+          </nav>
+        </aside>
 
-export default ProductsFilter
+        {/* Products Section */}
+        <main className="bg-[#493628] flex-1 rounded-2xl shadow-lg p-6">
+          <ProductsSection products={filtered} />
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default ProductsFilter;
