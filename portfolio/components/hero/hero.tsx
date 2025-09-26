@@ -1,56 +1,44 @@
-"use client"
-import React from "react"
-import { Button } from "react-bootstrap"
-import { useRouter } from "next/navigation"
-import Image from "next/image"
+"use client";
+import React from "react";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
-    <div className='container relative flex flex-col-reverse md:flex-row items-center justify-between object-contain min-h-[80vh] px-6 md:px-20 text-white'>
-      {/* Text Content */}
-      <div className='flex-1 flex flex-col gap-6 md:pr-10'>
-        <div className='[text-align:center] md:text-left'>
-          <h1 className='text-4xl md:text-5xl font-bold leading-tight'>
-            Explore the Building Blocks of the Universe
+    <div className="container mt-[60px] relative text-white">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Content */}
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Explore the Elements
           </h1>
-          <p className='text-lg md:text-xl text-gray-200 mt-4'>
-            An interactive periodic table to visualize, filter, and discover
-            chemical elements with ease.
+          <p className="text-lg mb-8">
+            Discover the building blocks of the universe with our interactive
+            Periodic Table. Learn properties, uses, and fun facts — all in one
+            place.
           </p>
-        </div>
-
-        {/* Buttons */}
-        <div className='w-[100%] grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-4 mt-4'>
-          <Button
-            variant='primary'
+          <button
+            className="p-3 !border-none bg-[#8FE64A] hover:bg-[#7ED957] hover:scale-108 transition !rounded-full font-semibold"
             onClick={() => router.push("/periodic-table")}
-            className='w-[100%] px-8 py-3 text-lg font-semibold rounded-lg bg-gradient-to-r from-purple-600 to-indigo-500 hover:from-purple-700 hover:to-indigo-600 transition-colors duration-300'
           >
-            Explore Elements
-          </Button>
-          <Button
-            variant='secondary'
-            onClick={() => router.push("/")}
-            className='w-[100%] px-8 py-3 text-lg font-semibold rounded-lg border-2 border-white text-white hover:bg-white hover:text-indigo-800 transition-colors duration-300'
-          >
-            Learn More
-          </Button>
+            Start Exploring
+          </button>
         </div>
-      </div>
 
-      {/* Image */}
-      <div className='flex-1 flex justify-center md:justify-end mb-6 md:mb-0'>
-        <Image
-          src={"/images/hero/hero-img.png"}
-          alt='hero section image'
-          width={600}
-          height={600}
-          className='w-full max-w-xs sm:max-w-sm md:max-w-lg object-contain'
-        />
+        {/* Right Video */}
+        <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-lg">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full border-0 rounded-xl shadow-lg"
+            src="https://www.youtube-nocookie.com/embed/8Are9dDbW24?autoplay=1&mute=1&controls=0&start=93&loop=1&playlist=8Are9dDbW24"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

@@ -1,45 +1,45 @@
-"use client"
-import React from "react"
-import Container from "react-bootstrap/Container"
-import Nav from "react-bootstrap/Nav"
-import Navbar from "react-bootstrap/Navbar"
-import NavDropdown from "react-bootstrap/NavDropdown"
-import { useState } from "react"
+"use client";
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { useState } from "react";
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Navbar
-      expand='lg'
-      className='!fixed w-[100%] top-0 left-0 z-50 bg-gradient-to-r from-[#0f172a] via-[#1e1b4b] to-[#4c1d95] shadow-md'
+      expand="lg"
+      className="!sticky w-[90%] top-[20px] mx-[auto] rounded-full z-50 shadow-2xl bg-gradient-to-r from-[#506bd7] to-[#4c1d95]"
     >
-      <Container className='flex items-center justify-between'>
+      <Container className="flex items-center justify-between">
         {/* Brand */}
         <Navbar.Brand
-          href='/'
-          className='text-2xl font-bold tracking-wide text-white hover:text-purple-300 transition-colors'
+          href="/"
+          className="text-2xl font-bold tracking-wide text-white hover:text-purple-300 transition-colors"
         >
           Elemently
         </Navbar.Brand>
 
         {/* Toggle (hamburger) */}
         <Navbar.Toggle
-          aria-controls='basic-navbar-nav'
-          className='border-0 focus:outline-none focus:ring-2 focus:ring-purple-400 navbar-toggler-white'
+          aria-controls="basic-navbar-nav"
+          className="border-0 focus:outline-none focus:ring-2 focus:ring-purple-400 navbar-toggler-white"
         />
 
         {/* Links */}
-        <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='ms-auto flex items-center space-x-6 text-lg'>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto flex items-center space-x-6 text-lg">
             <Nav.Link
-              href='/periodic-table'
-              className='!text-white hover:!text-purple-300 transition-colors'
+              href="/periodic-table"
+              className="!text-white hover:!text-purple-300 transition-colors"
             >
               Periodic Table
             </Nav.Link>
             <Nav.Link
-              href='/about'
-              className='!text-white hover:!text-purple-300 transition-colors'
+              href="/about"
+              className="!text-white hover:!text-purple-300 transition-colors"
             >
               About
             </Nav.Link>
@@ -47,7 +47,7 @@ const Header = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
