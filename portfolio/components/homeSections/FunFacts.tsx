@@ -57,13 +57,13 @@ const FunFacts = () => {
       <h1 className="text-3xl font-bold text-center">
         Fun Facts about the Elements
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-[32px]">
         {Facts.map((fact) => {
           const IconComponent = iconMap[fact.icon];
           return (
             <div
               key={fact.id}
-              className="flex flex-col items-center p-4 border border-white rounded-md text-center gap-2"
+              className="scaleScrollAnimation flex flex-col items-center p-4 border border-white rounded-md text-center gap-2"
             >
               <IconComponent size={48} color="#8FE64A" />
               <p className="text-white">

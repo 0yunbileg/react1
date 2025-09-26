@@ -10,7 +10,7 @@ const Hero = () => {
         {/* Left Content */}
         <div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Explore the Elements
+            Explore the Universe
           </h1>
           <p className="text-lg mb-8">
             Discover the building blocks of the universe with our interactive
