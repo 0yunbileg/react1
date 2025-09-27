@@ -1,16 +1,14 @@
 "use client";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
-import Image, { Button } from "react-bootstrap";
 import Link from "next/link";
-import { GiMountains } from "react-icons/gi";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaCheese } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { IoSearch } from "react-icons/io5";
 
 const Header = () => {
-  const { loggedIn, user, logout } = useAuth();
+  const { loggedIn } = useAuth();
   const { cart } = useCart();
   return (
     <header className="p-3 sticky top-0 z-4 bg-[#493628] w-[100%]">

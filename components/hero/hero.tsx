@@ -1,12 +1,7 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
 
 const Hero = () => {
-  return (
-  <div className='bg-[#AB886D]'>
+  return <div className="bg-[#AB886D]"></div>;
+};
 
-  </div>
-  )
-}
-
-export default Hero
+export default Hero;

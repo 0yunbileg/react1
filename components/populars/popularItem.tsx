@@ -18,7 +18,7 @@ interface Product {
 
 const PopularItem = ({ product }: { product: Product }) => {
   const [hovered, setHovered] = useState(false);
-  const { addToCart, cart } = useCart();
+  const { addToCart } = useCart();
 
   return (
     <Card

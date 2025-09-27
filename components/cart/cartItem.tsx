@@ -19,13 +19,9 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({
-  id,
   title,
   price,
   image1,
-  shortDescription,
-  fullDescription,
-  category,
   quantity,
   onIncrease,
   onDecrease,

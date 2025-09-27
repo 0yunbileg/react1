@@ -1,17 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import ProductsSection from "./productsSection";
-
-interface Product {
-  id: number;
-  title: string;
-  shortDescription: string;
-  description: string;
-  price: number;
-  image: string;
-  image1: string;
-  category: string;
-}
+import { Product } from "@/context/CartContext";
 
 const categories = [
   { key: "all", label: "All" },

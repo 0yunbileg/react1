@@ -94,7 +94,7 @@ const Login: React.FC = () => {
         </div>
 
         <div className="flex w-full justify-end mb-4 !text-[#fffbe9] items-center gap-2">
-          <p className="m-0">Don't have an account?</p>
+          <p className="m-0">Don&apos;t have an account?</p>
           <Link
             className="!text-[#fffbe9] !font-bold transition !no-underline"
             href={"/signup"}
