@@ -19,7 +19,7 @@ const Profile = () => {
         <div className="flex flex-col items-center mb-6">
           {/* Profile picture */}
           <img
-            src="/default-profile.png"
+            src="/images/default-profile.jpg"
             alt="Profile"
             className="w-24 h-24 rounded-full mb-4 border-2 border-[#ab886d] object-cover"
           />
