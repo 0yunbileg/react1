@@ -9,9 +9,9 @@ import { useCart, Product } from "@/context/CartContext";
 
 const CardItem = ({ product }: { product: Product }) => {
   const [hovered, setHovered] = useState(false);
-  const { cart, addToCart, updateQuantity, removeFromCart } = useCart();
+  const { cart, addToCart, updateQuantity } = useCart();
 
-  let cartItem = cart.find((item) => item.id === product.id);
+  const cartItem = cart.find((item) => item.id === product.id);
 
   return (
     <div className="w-[100%] flex justify-center">
