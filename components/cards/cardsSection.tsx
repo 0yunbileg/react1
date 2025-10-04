@@ -31,7 +31,7 @@ export default function CardsSection() {
   return (
     <div className="container text-white mb-[100px] mt-[60px]">
       <h1 className="!font-serif text-center">Products</h1>
-      <div className="grid gap-4 grid-cols-4 mt-[60px]">
+      <div className="grid gap-4 md:grid-cols-4 mt-[60px]">
         {products.slice(0, 4).map((product) => (
           <CardItem key={product.id} product={product} />
         ))}

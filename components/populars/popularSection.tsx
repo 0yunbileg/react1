@@ -28,7 +28,7 @@ const PopularSection = () => {
   return (
     <div className="container text-white !font-serif">
       <h1 className="text-center">Popular Products</h1>
-      <div className="flex justify-between mt-[60px]">
+      <div className="flex flex-col md:flex-row gap-4 items-center justify-between mt-[60px]">
         {products.slice(0, 3).map((product) => (
           <PopularItem key={product.id} product={product} />
         ))}

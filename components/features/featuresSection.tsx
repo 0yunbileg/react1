@@ -1,7 +1,7 @@
-import React from "react"
-import FeaturesItem from "./featuresItem"
-import { MdOutlineBakeryDining } from "react-icons/md"
-import { LuTruck, LuLeaf } from "react-icons/lu"
+import React from "react";
+import FeaturesItem from "./featuresItem";
+import { MdOutlineBakeryDining } from "react-icons/md";
+import { LuTruck, LuLeaf } from "react-icons/lu";
 
 const FEATURES = [
   {
@@ -25,19 +25,19 @@ const FEATURES = [
       "Browse categories, customize your order, and schedule delivery or pickup with secure checkout and multiple payment options.",
     icon: LuTruck,
   },
-]
+];
 
 const FeaturesSection = () => {
   return (
-    <div className='container text-white !font-serif mt-[100px]'>
-      <h1 className='text-center'>Features</h1>
-      <div className='flex justify-between mt-[60px]'>
+    <div className="container text-white !font-serif mt-[100px]">
+      <h1 className="text-center">Features</h1>
+      <div className="flex flex-col md:flex-row items-center gap-4 justify-between mt-[60px]">
         {FEATURES.map((feature) => (
           <FeaturesItem key={feature.id} feature={feature} />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturesSection
+export default FeaturesSection;

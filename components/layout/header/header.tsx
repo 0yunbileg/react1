@@ -16,10 +16,10 @@ const Header = () => {
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <Link
             href="/"
-            className="d-flex align-items-center mr-[30px] mb-2 mb-lg-0 text-white text-decoration-none font-bold text-2xl gap-4"
+            className="d-flex align-items-center mr-[30px] mb-2 mb-lg-0 text-white text-decoration-none font-bold text-2xl gap-2"
           >
             <FaCheese size={36} />
-            EcoCarts
+            SweetCrust
           </Link>
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>

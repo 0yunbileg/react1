@@ -263,7 +263,7 @@ const Header = ()=>{
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: "/",
-                        className: "d-flex align-items-center mr-[30px] mb-2 mb-lg-0 text-white text-decoration-none font-bold text-2xl gap-4",
+                        className: "d-flex align-items-center mr-[30px] mb-2 mb-lg-0 text-white text-decoration-none font-bold text-2xl gap-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaCheese"], {
                                 size: 36
@@ -272,7 +272,7 @@ const Header = ()=>{
                                 lineNumber: 21,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
-                            "EcoCarts"
+                            "SweetCrust"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/layout/header/header.tsx",

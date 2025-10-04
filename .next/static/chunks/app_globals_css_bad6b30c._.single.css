@@ -71,6 +71,8 @@
     --color-green-700: #008138;
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5dc;
     --color-gray-400: #99a1af;
     --color-gray-500: #6a7282;
     --color-gray-600: #4a5565;
@@ -119,6 +121,8 @@
       --color-green-700: color(display-p3 .198355 .501799 .245335);
       --color-gray-50: color(display-p3 .977213 .98084 .985102);
       --color-gray-100: color(display-p3 .953567 .956796 .964321);
+      --color-gray-200: color(display-p3 .899787 .906171 .92106);
+      --color-gray-300: color(display-p3 .822033 .835264 .858521);
       --color-gray-400: color(display-p3 .605734 .630385 .680158);
       --color-gray-500: color(display-p3 .421287 .446085 .504784);
       --color-gray-600: color(display-p3 .297358 .332176 .39043);
@@ -133,6 +137,8 @@
       --color-green-700: lab(47.0329% -47.0239 31.4788);
       --color-gray-50: lab(98.2596% -.247031 -.706708);
       --color-gray-100: lab(96.1596% -.0823438 -1.13575);
+      --color-gray-200: lab(91.6229% -.159115 -2.26791);
+      --color-gray-300: lab(85.1236% -.612259 -3.7138);
       --color-gray-400: lab(65.9269% -.832707 -8.17473);
       --color-gray-500: lab(47.7841% -.393182 -10.0268);
       --color-gray-600: lab(35.6337% -1.58697 -10.8425);
@@ -649,10 +655,6 @@
     height: 100% !important;
   }
 
-  .\!h-screen {
-    height: 100vh !important;
-  }
-
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
@@ -661,8 +663,8 @@
     height: calc(var(--spacing) * 24);
   }
 
-  .h-screen {
-    height: 100vh;
+  .max-h-\[600px\] {
+    max-height: 600px;
   }
 
   .max-h-\[800px\] {
@@ -689,11 +691,32 @@
     width: 24rem;
   }
 
+  .w-\[70\%\] {
+    width: 70%;
+  }
+
+  .w-\[80\%\] {
+    width: 80%;
+  }
+
   .w-\[90\%\] {
     width: 90%;
   }
 
-  .w-\[100\%\], .w-full {
+  .w-\[100\%\] {
+    width: 100%;
+  }
+
+  .w-\[100\] {
+    width: 100px;
+  }
+
+  .w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .w-full {
     width: 100%;
   }
 
@@ -707,6 +730,10 @@
 
   .max-w-6xl {
     max-width: var(--container-6xl);
+  }
+
+  .max-w-\[80\%\] {
+    max-width: 80%;
   }
 
   .max-w-md {
@@ -759,6 +786,10 @@
 
   .justify-end {
     justify-content: flex-end;
+  }
+
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
   }
 
   .gap-2 {
@@ -831,7 +862,12 @@
     border-radius: var(--radius-xl);
   }
 
-  .border {
+  .\!border {
+    border-style: var(--tw-border-style) !important;
+    border-width: 1px !important;
+  }
+
+  .border, .border-1 {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
@@ -894,6 +930,14 @@
     background-color: var(--color-gray-50) !important;
   }
 
+  .\!bg-gray-100 {
+    background-color: var(--color-gray-100) !important;
+  }
+
+  .\!bg-gray-200 {
+    background-color: var(--color-gray-200) !important;
+  }
+
   .bg-\[\#493628\] {
     background-color: #493628;
   }
@@ -932,6 +976,14 @@
 
   .object-cover {
     object-fit: cover;
+  }
+
+  .p-0 {
+    padding: calc(var(--spacing) * 0);
+  }
+
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
 
   .p-3 {
@@ -1241,6 +1293,18 @@
   }
 
   @media (hover: hover) {
+    .hover\:\!bg-gray-200:hover {
+      background-color: var(--color-gray-200) !important;
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:\!bg-gray-300:hover {
+      background-color: var(--color-gray-300) !important;
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:bg-\[\#a27b5c\]:hover {
       background-color: #a27b5c;
     }
@@ -1288,8 +1352,20 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:flex {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:w-1\/4 {
       width: 25%;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:w-1\/6 {
+      width: 16.6667%;
     }
   }
 
@@ -1300,8 +1376,20 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:w-\[100\%\] {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 
@@ -1314,6 +1402,18 @@
   @media (min-width: 48rem) {
     .md\:flex-row {
       flex-direction: row;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:justify-between {
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:p-4 {
+      padding: calc(var(--spacing) * 4);
     }
   }
 }

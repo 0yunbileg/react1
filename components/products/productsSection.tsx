@@ -10,12 +10,10 @@ interface ProductsSectionProps {
 
 const ProductsSection: React.FC<ProductsSectionProps> = ({ products }) => {
   return (
-    <div className="bg-[#493628] container text-white mb-[100px]">
-      <div className="grid gap-4 grid-cols-4 ">
-        {products.map((product) => (
-          <CardItem key={product.id} product={product} />
-        ))}
-      </div>
+    <div className="container text-white p-0 grid gap-4 md:grid-cols-4 ">
+      {products.map((product) => (
+        <CardItem key={product.id} product={product} />
+      ))}
     </div>
   );
 };

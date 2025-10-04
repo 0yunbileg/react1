@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/PADA-1-2-12/Documents/react1/ecommerce/components/profile/profile.tsx"],"sourcesContent":["\"use client\"\nimport { useAuth } from \"@/context/AuthContext\"\n\nconst Profile = () => {\n  const { loggedIn, user, logout } = useAuth()\n\n  if (!loggedIn) return <p>Please log in to see your profile.</p>\n\n  return (\n    <div>\n      <h2>\n        Welcome, {user?.firstName} {user?.lastName}\n      </h2>\n      <p>Email: {user?.email}</p>\n      <p>Phone: {user?.phone}</p>\n      <p>Date of Birth: {user?.dateOfBirth}</p>\n      <button onClick={logout}>Logout</button>\n    </div>\n  )\n}\n\nexport default Profile\n"],"names":[],"mappings":";;;;;AACA;AADA;;;AAGA,MAAM,UAAU;IACd,MAAM,EAAE,QAAQ,EAAE,IAAI,EAAE,MAAM,EAAE,GAAG,IAAA,+IAAO;IAE1C,IAAI,CAAC,UAAU,qBAAO,2PAAC;kBAAE;;;;;;IAEzB,qBACE,2PAAC;;0BACC,2PAAC;;oBAAG;oBACQ,MAAM;oBAAU;oBAAE,MAAM;;;;;;;0BAEpC,2PAAC;;oBAAE;oBAAQ,MAAM;;;;;;;0BACjB,2PAAC;;oBAAE;oBAAQ,MAAM;;;;;;;0BACjB,2PAAC;;oBAAE;oBAAgB,MAAM;;;;;;;0BACzB,2PAAC;gBAAO,SAAS;0BAAQ;;;;;;;;;;;;AAG/B;uCAEe","debugId":null}}]
-}

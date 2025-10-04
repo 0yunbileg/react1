@@ -30,15 +30,15 @@ const ProductsFilter = () => {
 
   return (
     <div className="min-h-screen p-6">
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col gap-6 items-center">
         {/* Sidebar */}
-        <aside className="w-full md:w-1/4 bg-[#493628] text-white rounded-2xl shadow-lg p-4">
-          <nav className="flex md:flex-col gap-3">
+        <aside className="w-[80%] md:w-[100%] bg-[#493628] text-white rounded-2xl shadow-lg p-2 md:p-4">
+          <nav className="flex flex-wrap gap-2 justify-left md:justify-between">
             {categories.map((c) => (
               <button
                 key={c.key}
                 onClick={() => setActive(c.key)}
-                className={`w-full px-4 py-2 rounded-xl text-left font-medium transition-all 
+                className={`w-fit px-4 py-2 rounded-xl text-left font-medium transition-all 
                 ${
                   active === c.key
                     ? "!rounded-2xl bg-[#ab886d] text-white shadow-md"
@@ -52,7 +52,7 @@ const ProductsFilter = () => {
         </aside>
 
         {/* Products Section */}
-        <main className="bg-[#493628] flex-1 rounded-2xl shadow-lg p-6">
+        <main className="flex-1">
           <ProductsSection products={filtered} />
         </main>
       </div>

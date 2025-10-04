@@ -22,7 +22,7 @@ const PopularItem = ({ product }: { product: Product }) => {
 
   return (
     <Card
-      className="!rounded-3xl w-[24rem] !font-serif relative overflow-hidden !bg-gray-50"
+      className="!rounded-3xl max-w-[80%] w-[24rem] !font-serif relative overflow-hidden !bg-gray-50"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
